@@ -3,7 +3,7 @@
     <top-bar></top-bar>
     <div class="main">
       <left-aslide></left-aslide>
-      <div>
+      <div class="right">
         <ul class="top-nav">
           <li @click="toLink('/Home/gx')">个性推荐</li>
           <li>专属定制</li>
@@ -76,5 +76,8 @@ export default {
 .isActive {
   font-weight: bold;
   border-bottom: 4px solid #ec4141;
+}
+.place {
+  width: 960px;
 }
 </style>
