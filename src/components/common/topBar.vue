@@ -11,10 +11,10 @@
         @blur="notShow"
         class="search-change"
       ></el-input>
-      <div :class="{ topList: isShow }">
+      <div class="topList" :class="{ show: isShow }">
         <p class="hot-song">热搜榜单</p>
         <ul>
-          <li v-for="(item, key) in searchList" :key="key">
+          <li class="toplist-show" v-for="(item, key) in searchList" :key="key">
             <span class="pm">{{ key + 1 }}</span>
             {{ item.searchWord }}
           </li>
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="right-logo">
-      <el-dropdown @command="handleCommand">
+      <el-dropdown>
         <span class="el-dropdown-link">
           <img :src="user" />
         </span>
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       user: require("../../assets/img/user.png"),
-      isShow: false,
+      isShow: true,
       searchList: [],
     };
   },
@@ -92,6 +92,24 @@ export default {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
   overflow: auto;
+}
+.show {
+  display: none;
+}
+.topList ul {
+  margin-top: 20px;
+}
+.topList ul li {
+  display: flex;
+  padding-left: 20px;
+  line-height: 50px;
+  height: 50px;
+}
+.topList ul li span {
+  margin-right: 10px;
+}
+.topList ul li:hover {
+  background-color: #f6f6f7;
 }
 .right-logo img {
   margin-right: 10px;

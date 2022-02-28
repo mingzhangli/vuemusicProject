@@ -3,14 +3,19 @@
     <top-bar></top-bar>
     <div class="main">
       <left-aslide></left-aslide>
-      <ul class="top-nav">
-        <li>aaaay个性推荐</li>
-        <li>专属定制</li>
-        <li>歌单</li>
-        <li>排行榜</li>
-        <li>歌手</li>
-        <li>最新音乐</li>
-      </ul>
+      <div>
+        <ul class="top-nav">
+          <li @click="toLink('/Home/gx')">个性推荐</li>
+          <li>专属定制</li>
+          <li>歌单</li>
+          <li>排行榜</li>
+          <li>歌手</li>
+          <li>最新音乐</li>
+        </ul>
+        <div class="place">
+          <router-view> </router-view>
+        </div>
+      </div>
     </div>
 
     <bottom-bar></bottom-bar>
@@ -46,7 +51,11 @@ export default {
         console.log(err);
       });
   },
-  methods: {},
+  methods: {
+    toLink(url) {
+      this.$router.push(url);
+    },
+  },
 };
 </script>
 

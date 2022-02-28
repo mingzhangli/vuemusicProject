@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import gx from '../components/home/gx.vue'
 
 Vue.use(VueRouter)
 
@@ -11,8 +12,11 @@ const routes = [
   },
   {
     path: '/Home',
-    name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      { path: 'gx', component: gx },
+
+    ]
   },
   {
     path: '/about',
