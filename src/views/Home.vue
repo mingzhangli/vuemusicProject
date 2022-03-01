@@ -5,9 +5,24 @@
       <left-aslide></left-aslide>
       <div class="right">
         <ul class="top-nav">
-          <li @click="toLink('/Home/gx')">个性推荐</li>
-          <li>专属定制</li>
-          <li>歌单</li>
+          <li
+            @click="toLink('/Home/gx')"
+            :class="{ isActive: isShow('/Home/gx') }"
+          >
+            个性推荐
+          </li>
+          <li
+            @click="toLink('/Home/zs')"
+            :class="{ isActive: isShow('/Home/zs') }"
+          >
+            专属定制
+          </li>
+          <li
+            @click="toLink('/Home/gd')"
+            :class="{ isActive: isShow('/Home/gd') }"
+          >
+            歌单
+          </li>
           <li>排行榜</li>
           <li>歌手</li>
           <li>最新音乐</li>
@@ -32,6 +47,7 @@ export default {
   data() {
     return {
       property: "value",
+      isPath: "",
     };
   },
   components: {
@@ -39,21 +55,13 @@ export default {
     leftAslide,
     bottomBar,
   },
-  mounted() {
-    this.$request({
-      method: "get",
-      url: "/artist/top/song?id=6452",
-    })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
+  mounted() {},
   methods: {
     toLink(url) {
       this.$router.push(url);
+    },
+    isShow(url) {
+      return this.$route.path == url; //判断是否是当前子路由，然后返回boolean值然后显示样式
     },
   },
 };

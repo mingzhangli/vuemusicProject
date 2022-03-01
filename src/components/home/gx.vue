@@ -54,6 +54,21 @@
         </li>
       </ul>
     </div>
+    <div class="MV">
+      <h3>最新音乐<i class="el-icon-arrow-right"></i></h3>
+      <ul>
+        <li v-for="(item, id) in MV" :key="id">
+          <div>
+            <img
+              :src="item.picUrl"
+              alt=""
+              style="width: 220px; height: 170px"
+            />
+          </div>
+          <div>{{ item.name }}</div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -65,6 +80,7 @@ export default {
       recommendList: [],
       exclusiveList: [],
       newSong: [],
+      MV: [],
     };
   },
   components: {},
@@ -73,7 +89,6 @@ export default {
       url: "/banner?type=0", //取首页个性推荐的轮播图
     }).then((success) => {
       this.banner = success.data.banners;
-      console.log(this.banner);
     });
 
     this.$request({
@@ -94,7 +109,6 @@ export default {
     })
       .then((res) => {
         this.exclusiveList = res.data.result;
-        console.log(this.exclusiveList);
       })
       .catch((err) => {
         console.log(err);
@@ -109,6 +123,12 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+
+    this.$request({
+      url: "/personalized/mv",
+    }).then((res) => {
+      this.MV = res.data.result;
+    });
   },
   methods: {
     getplayCount(num) {
@@ -183,12 +203,22 @@ img {
   margin-top: 20px;
 }
 .latest ul {
+  padding-top: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .latest ul li {
   width: 170px;
-  height: 170px;
+  height: 210px;
+  margin-bottom: 10px;
+}
+.MV ul {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.MV ul li {
+  width: 230px;
 }
 </style>

@@ -2,20 +2,26 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import gx from '../components/home/gx.vue'
+import zs from '../components/home/zs.vue'
+import gd from '../components/home/gd.vue'
+
+
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/Home'
+    redirect: '/Home/gx'
   },
   {
     path: '/Home',
     component: Home,
     children: [
       { path: 'gx', component: gx },
-
+      { path: 'zs', component: zs },
+      { path: 'gd', component: gd },
     ]
   },
   {
