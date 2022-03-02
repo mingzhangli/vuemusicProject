@@ -24,12 +24,34 @@
         <p @click="isShow">全部歌单<i class="el-icon-arrow-right"></i></p>
         <div class="song-classify" :class="{ isShow: showsongList }">
           <div class="title">音乐分类</div>
-          <ul>
+          <ul class="clasify-left">
             <li v-for="(item, encodeId) in all" :key="encodeId">
               {{ item.name }}
             </li>
           </ul>
         </div>
+      </div>
+      <div class="clasify-right">
+        <ul>
+          <li v-for="(Item, index) in tags" :key="index">{{ Item.name }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-list">
+      <ul>
+        <li v-for="item in list" :key="item.id + Math.random()">
+          <img :src="item.coverImgUrl" alt="" width="170px" height="170px" />
+          <p>{{ item.name }}</p>
+        </li>
+      </ul>
+      <div class="pagination">
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="100"
+          @current-change="update"
+        >
+        </el-pagination>
       </div>
     </div>
   </div>
@@ -40,8 +62,9 @@ export default {
   data() {
     return {
       heighQuality: [],
-      tagss: [],
+      tags: [],
       all: [],
+      list: [],
       showsongList: true,
     };
   },
@@ -53,18 +76,33 @@ export default {
       this.heighQuality = res.data.playlists[0];
       console.log(res);
     });
+
     this.$request({
       url: "/playlist/catlist",
     }).then((success) => {
       this.tags = success.data.sub.slice(0, 10);
       this.all = success.data.sub;
       console.log(this.tags);
-      console.log(this.all);
+    });
+
+    this.$request({
+      url: "/top/playlist?limit=40",
+    }).then((success) => {
+      this.list = success.data.playlists;
+      console.log(this.list);
     });
   },
   methods: {
     isShow() {
       this.showsongList = !this.showsongList;
+    },
+    update(page) {
+      this.$request({
+        url: "/top/playlist?limit=40&offset=" + 40 * (page - 1),
+      }).then((res) => {
+        this.list = res.data.playlists;
+        console.log(this.list);
+      });
     },
   },
 };
@@ -104,6 +142,8 @@ export default {
 }
 .songList {
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .allSong {
   position: relative;
@@ -143,5 +183,38 @@ export default {
 }
 .isShow {
   display: none;
+}
+.clasify-left {
+  display: flex;
+  justify-content: space-between;
+}
+.clasify-right ul {
+  display: flex;
+  justify-content: space-between;
+}
+.clasify-right ul li {
+  width: 80px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.clasify-right ul li:hover {
+  color: #ec4141;
+  background: #f0dede;
+}
+.content-list {
+  margin: 20px 0 50px 0;
+}
+.content-list ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.content-list ul li {
+  width: 180px;
+  height: 240px;
+}
+.pagination {
+  margin: 0 auto;
 }
 </style>
