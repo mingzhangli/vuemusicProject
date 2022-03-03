@@ -23,9 +23,24 @@
           >
             歌单
           </li>
-          <li>排行榜</li>
-          <li>歌手</li>
-          <li>最新音乐</li>
+          <li
+            @click="toLink('/Home/phb')"
+            :class="{ isActive: isShow('/Home/phb') }"
+          >
+            排行榜
+          </li>
+          <li
+            @click="toLink('/Home/gs')"
+            :class="{ isActive: isShow('/Home/gs') }"
+          >
+            歌手
+          </li>
+          <li
+            @click="toLink('/Home/zx')"
+            :class="{ isActive: isShow('/Home/zx') }"
+          >
+            最新音乐
+          </li>
         </ul>
         <div class="place">
           <router-view> </router-view>

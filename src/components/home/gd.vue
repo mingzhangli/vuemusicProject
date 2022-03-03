@@ -48,7 +48,7 @@
         <el-pagination
           background
           layout="prev, pager, next"
-          :total="100"
+          :total="150"
           @current-change="update"
         >
         </el-pagination>
@@ -74,22 +74,19 @@ export default {
       url: "/top/playlist/highquality?limit=1",
     }).then((res) => {
       this.heighQuality = res.data.playlists[0];
-      console.log(res);
     });
 
     this.$request({
       url: "/playlist/catlist",
-    }).then((success) => {
-      this.tags = success.data.sub.slice(0, 10);
-      this.all = success.data.sub;
-      console.log(this.tags);
+    }).then((res) => {
+      this.tags = res.data.sub.slice(0, 10);
+      this.all = res.data.sub;
     });
 
     this.$request({
       url: "/top/playlist?limit=40",
     }).then((success) => {
       this.list = success.data.playlists;
-      console.log(this.list);
     });
   },
   methods: {
@@ -101,7 +98,6 @@ export default {
         url: "/top/playlist?limit=40&offset=" + 40 * (page - 1),
       }).then((res) => {
         this.list = res.data.playlists;
-        console.log(this.list);
       });
     },
   },
@@ -215,6 +211,7 @@ export default {
   height: 240px;
 }
 .pagination {
-  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
 }
 </style>
