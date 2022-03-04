@@ -74,8 +74,15 @@ export default {
   text-overflow: ellipsis;
   margin-right: 40px;
 }
-.time {
+.song-name {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+.author {
+  width: 400px;
+}
+.time {
+  font-size: 12px;
+  color: gray;
 }
 </style>
