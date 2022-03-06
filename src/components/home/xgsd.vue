@@ -1,5 +1,14 @@
 <template>
   <div class="container">
+    <div class="classify">
+      <ul>
+        <li @click="getList(null)">全部</li>
+        <li @click="getList(0)">华语</li>
+        <li @click="getList(96)">欧美</li>
+        <li @click="getList(16)">韩国</li>
+        <li @click="getList(8)">日本</li>
+      </ul>
+    </div>
     <div class="content">
       <ul>
         <li v-for="item in songList" :key="item.id">
@@ -34,19 +43,39 @@ export default {
       sec < 10 ? "0" + sec : sec;
       return `${min}:${sec}`;
     },
+    getList(url) {
+      if (url) {
+        this.$request({
+          url: "/top/song",
+          params: {
+            type: url,
+          },
+        }).then((res) => {
+          this.songList = res.data.data;
+        });
+      }
+    },
   },
   mounted() {
     this.$request({
       url: "/top/song",
     }).then((res) => {
       this.songList = res.data.data;
-      console.log(this.songList);
     });
   },
 };
 </script>
 
 <style scoped >
+.classify ul {
+  margin-top: 10px;
+  display: flex;
+}
+.classify ul li {
+  width: 70px;
+  height: 30px;
+  text-align: center;
+}
 .content ul li {
   display: flex;
   align-items: center;

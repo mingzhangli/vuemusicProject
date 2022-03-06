@@ -14,8 +14,12 @@
       <div class="topList" :class="{ show: isShow }">
         <p class="hot-song">热搜榜单</p>
         <ul>
-          <li class="toplist-show" v-for="(item, key) in searchList" :key="key">
-            <span class="pm">{{ key + 1 }}</span>
+          <li
+            class="toplist-show"
+            v-for="(item, index) in searchList"
+            :key="item.Score"
+          >
+            <span class="pm">{{ index + 1 }}</span>
             {{ item.searchWord }}
           </li>
         </ul>
@@ -41,6 +45,7 @@ export default {
       user: require("../../assets/img/user.png"),
       isShow: true,
       searchList: [],
+      input: "",
     };
   },
   methods: {
@@ -52,8 +57,16 @@ export default {
         this.searchList = res.data.data;
       });
     },
-    search() {
-      console.log("bbb");
+    search(key) {
+      if (!key) {
+        this.$router.push({ name: "song", query: { keywords: this.input } });
+        this.$EventBus.$on("search");
+        this.isShow = !this.isShow;
+      } else {
+        this.$router.push({ name: "song", query: { keywords: key } });
+        this.$EventBus.$on("search");
+        this.isShow = !this.isShow;
+      }
     },
     notShow() {
       this.isShow = !this.isShow;

@@ -9,7 +9,8 @@ import gs from '../components/home/gs.vue'
 import zx from '../components/home/zx.vue'
 import xgsd from '../components/home/xgsd.vue'
 import xdsj from '../components/home/xdsj.vue'
-
+import search from "../views/search.vue"
+import song from '../components/Search/song.vue'
 
 
 
@@ -23,21 +24,26 @@ const routes = [
   },
   {
     path: '/Home',
+    name: 'Home',
     component: Home,
     children: [
-      { path: 'gx', component: gx },
-      { path: 'zs', component: zs },
-      { path: 'gd', component: gd },
-      { path: 'phb', component: phb },
-      { path: 'gs', component: gs },
+      { path: 'gx', name: 'gx', component: gx },
+      { path: 'zs', name: 'zs', component: zs },
+      { path: 'gd', name: 'gd', component: gd },
+      { path: 'phb', name: 'phb', component: phb },
+      { path: 'gs', name: 'gs', component: gs },
       {
-        path: 'zx', component: zx,
+        path: 'zx', name: 'zx', component: zx,
         redirect: '/Home/zx/xgsd',
-        children: [
-          { path: 'xgsd', component: xgsd },
-          { path: 'xdsj', component: xdsj },
-        ]
+        children: [{ path: 'xgsd', name: 'xgsd', component: xgsd }, { path: 'xdsj', name: 'xdsj', component: xdsj },]
       },
+      {
+        path: 'search', name: 'search', component: search,
+        children: [
+          { path: 'song', name: 'song', component: song }
+        ]
+
+      }
     ]
   },
   {
