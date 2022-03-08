@@ -61,11 +61,9 @@ export default {
       if (!key) {
         this.$router.push({ name: "song", query: { keywords: this.input } });
         this.$EventBus.$on("search");
-        this.isShow = !this.isShow;
       } else {
         this.$router.push({ name: "song", query: { keywords: key } });
         this.$EventBus.$on("search");
-        this.isShow = !this.isShow;
       }
     },
     notShow() {

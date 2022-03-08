@@ -11,6 +11,9 @@ import xgsd from '../components/home/xgsd.vue'
 import xdsj from '../components/home/xdsj.vue'
 import search from "../views/search.vue"
 import song from '../components/Search/song.vue'
+import artist from '../components/Search/artist.vue'
+import video from '../components/Search/video.vue'
+import gcs from '../components/Search/gcs.vue'
 
 
 
@@ -40,7 +43,10 @@ const routes = [
       {
         path: 'search', name: 'search', component: search,
         children: [
-          { path: 'song', name: 'song', component: song }
+          { path: 'song', name: 'song', component: song },
+          { path: 'artist', name: 'artist', component: artist },
+          { path: 'video', name: 'video', component: video },
+          { path: 'gcs', name: 'gcs', component: gcs },
         ]
 
       }

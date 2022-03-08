@@ -103,4 +103,10 @@ export default {
 .place {
   width: 960px;
 }
+.right {
+  flex: 1;
+  padding: 0 20px;
+  height: 700px;
+  overflow: auto;
+}
 </style>
