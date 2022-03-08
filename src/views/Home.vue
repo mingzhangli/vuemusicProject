@@ -48,7 +48,12 @@
       </div>
     </div>
 
-    <bottom-bar></bottom-bar>
+    <bottomBar
+      :murl="musicUrl"
+      :mpic="mpic"
+      :mname="mname"
+      :author="author"
+    ></bottomBar>
   </div>
 </template>
 
@@ -63,6 +68,10 @@ export default {
     return {
       property: "value",
       isPath: "",
+      musicUrl: "",
+      mpic: "",
+      mname: "",
+      author: "",
     };
   },
   components: {
@@ -70,13 +79,37 @@ export default {
     leftAslide,
     bottomBar,
   },
-  mounted() {},
+  mounted() {
+    this.$EventBus.$on("play", () => {
+      this.getsong();
+    });
+  },
   methods: {
     toLink(url) {
       this.$router.push(url);
     },
     isShow(url) {
       return this.$route.path == url; //判断是否是当前子路由，然后返回boolean值然后显示样式
+    },
+    getsong() {
+      this.$request({
+        url: "/song/url",
+        params: {
+          id: this.$store.state.mid,
+        },
+      }).then((res) => {
+        this.musicUrl = res.data.data[0].url;
+      });
+      this.$request({
+        url: "/song/detail",
+        params: {
+          ids: this.$store.state.mid,
+        },
+      }).then((res) => {
+        this.mpic = res.data.songs[0].al.picUrl;
+        this.author = res.data.songs[0].ar[0].name;
+        this.mname = res.data.songs[0].name;
+      });
     },
   },
 };

@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <el-table :data="tableData" stripe style="width: 100%">
+    <el-table
+      :data="tableData"
+      stripe
+      style="width: 100%"
+      @row-dblclick="transferMusic"
+    >
       <el-table-column prop="name" label="音乐标题" width="180">
       </el-table-column>
       <el-table-column prop="artists[0].name" label="歌手" width="180">
@@ -27,6 +32,12 @@ export default {
         sec < 10 ? "0" + sec : sec;
         return `${min}:${sec}`;
       };
+    },
+  },
+  methods: {
+    transferMusic(item) {
+      this.$store.state.mid = item.id;
+      this.$EventBus.$emit("play");
     },
   },
   mounted() {

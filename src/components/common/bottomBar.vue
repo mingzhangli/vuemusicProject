@@ -2,7 +2,7 @@
   <div class="container">
     <div class="music-info">
       <div class="img">
-        <img :src="songinfoImg" />
+        <img :src="mpic" />
       </div>
       <div class="introudce">
         <p class="title">{{ mname }}</p>
@@ -35,7 +35,6 @@ export default {
     return {
       songinfoImg: require("../.././assets/img/user.png"),
       drawer: false,
-      props: ["murl", "mpic", "mname", "author"],
     };
   },
   methods: {
@@ -43,6 +42,10 @@ export default {
       this.$router.push({ name: "playSong" });
     },
   },
+  mounted() {
+    console.log(this.murl);
+  },
+  props: ["murl", "mpic", "mname", "author"],
 };
 </script>
 
@@ -59,5 +62,9 @@ export default {
   height: 60px;
   border-radius: 10px;
   margin-left: 10px;
+  margin-right: 10px;
+}
+.music-info {
+  display: flex;
 }
 </style>
