@@ -2,7 +2,7 @@
   <div class="container">
     <div class="banner">
       <el-carousel :interval="4000" type="card" width="1000px" height="250px">
-        <el-carousel-item v-for="item in banner" :key="item">
+        <el-carousel-item v-for="item in banner" :key="item.tragetId">
           <img
             :src="item.imageUrl"
             alt=""
@@ -14,7 +14,11 @@
     <div class="song-order">
       <h3>推荐歌单<i class="el-icon-arrow-right"></i></h3>
       <ul>
-        <li v-for="(item, key) in recommendList" :key="key">
+        <li
+          v-for="(item, key) in recommendList"
+          :key="key"
+          @click="togd(item.id)"
+        >
           <span class="track"
             ><i class="el-icon-caret-right"></i>
             {{ getplayCount(item.playCount) }}</span
@@ -133,6 +137,9 @@ export default {
   methods: {
     getplayCount(num) {
       return num / 10000 > 0 ? parseInt(num / 10000) + "万" : num;
+    },
+    togd(id) {
+      this.$router.push({ name: "gdpage", query: { id: id } });
     },
   },
 };

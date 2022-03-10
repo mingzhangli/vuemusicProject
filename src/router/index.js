@@ -14,6 +14,9 @@ import song from '../components/Search/song.vue'
 import artist from '../components/Search/artist.vue'
 import video from '../components/Search/video.vue'
 import gcs from '../components/Search/gcs.vue'
+import songlist from '../views/songlist.vue'
+import gdpage from '../components/songlist/gdpage.vue'
+import commet from '../components/songlist/commet.vue'
 
 
 
@@ -48,18 +51,19 @@ const routes = [
           { path: 'video', name: 'video', component: video },
           { path: 'gcs', name: 'gcs', component: gcs },
         ]
-
+      },
+      {
+        path: 'songlist', name: 'songlist', component: songlist,
+        children: [
+          {
+            path: 'gdpage', name: 'gdpage', component: gdpage,
+          },
+          { path: 'commet', name: 'commet', component: commet }
+        ]
       }
     ]
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+
 ]
 
 const router = new VueRouter({
