@@ -17,6 +17,7 @@ import gcs from '../components/Search/gcs.vue'
 import songlist from '../views/songlist.vue'
 import gdpage from '../components/songlist/gdpage.vue'
 import commet from '../components/songlist/commet.vue'
+import collector from '../components/songlist/collector.vue'
 
 
 
@@ -55,10 +56,9 @@ const routes = [
       {
         path: 'songlist', name: 'songlist', component: songlist,
         children: [
-          {
-            path: 'gdpage', name: 'gdpage', component: gdpage,
-          },
-          { path: 'commet', name: 'commet', component: commet }
+          { path: 'gdpage', name: 'gdpage', component: gdpage, },
+          { path: 'commet', name: 'commet', component: commet },
+          { path: 'collector', name: 'collector', component: collector }
         ]
       }
     ]

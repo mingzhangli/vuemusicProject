@@ -34,11 +34,17 @@
     </div>
     <div class="bar">
       <div class="bar-left">
-        <span @click="toLink('gdpage')" :class="{ isShow: show('/songlist') }"
+        <span @click="toLink('gdpage')" :class="{ isShow: show('/gdpage') }"
           >歌曲列表</span
         >
-        <span @click="toLink('commet')">评论</span>
-        <span>收藏者</span>
+        <span @click="toLink('commet')" :class="{ isShow: show('/commet') }"
+          >评论</span
+        >
+        <span
+          @click="toLink('collector')"
+          :class="{ isShow: show('/collector') }"
+          >收藏者</span
+        >
       </div>
     </div>
     <router-view :tableList="tableList"></router-view>
@@ -174,7 +180,8 @@ export default {
 .bar span {
   margin-right: 15px;
 }
+
 .isShow {
-  border-bottom: #ec4141;
+  border-bottom: 4px solid #ec4141;
 }
 </style>
