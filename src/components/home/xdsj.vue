@@ -11,7 +11,7 @@
     </div>
     <div class="content">
       <ul>
-        <li v-for="item in albumList" :key="item.id">
+        <li v-for="item in albumList" :key="item.id" @click="sendId(id)">
           <img :src="item.blurPicUrl" alt="" width="150px" height="150px" />
           <p>{{ item.name }}</p>
         </li>
@@ -29,6 +29,10 @@ export default {
   },
   components: {},
   methods: {
+    sendId(id) {
+      this.$store.state.mid = id;
+      this.$EventBus.$emit("play");
+    },
     getList(url) {
       this.$request({
         url: "/album/new",

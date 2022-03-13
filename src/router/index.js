@@ -18,6 +18,11 @@ import songlist from '../views/songlist.vue'
 import gdpage from '../components/songlist/gdpage.vue'
 import commet from '../components/songlist/commet.vue'
 import collector from '../components/songlist/collector.vue'
+import artistInfo from '../views/artistInfo.vue'
+import album from '../components/artistInfo/album.vue'
+import mv from '../components/artistInfo/mv.vue'
+import Infos from '../components/artistInfo/Infos.vue'
+import similar from '../components/artistInfo/similar.vue'
 
 
 
@@ -58,7 +63,16 @@ const routes = [
         children: [
           { path: 'gdpage', name: 'gdpage', component: gdpage, },
           { path: 'commet', name: 'commet', component: commet },
-          { path: 'collector', name: 'collector', component: collector }
+          { path: 'collector', name: 'collector', component: collector },
+        ]
+      },
+      {
+        path: 'artistInfo', name: 'artistInfo', component: artistInfo,
+        children: [
+          { path: 'album', name: 'album', component: album },
+          { path: 'mv', name: 'mv', component: mv },
+          { path: 'Infos', name: 'Infos', component: Infos },
+          { path: 'similar', name: 'similar', component: similar },
         ]
       }
     ]

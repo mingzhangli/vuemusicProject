@@ -2,7 +2,11 @@
   <div class="container">
     <div class="top-list">
       <ul>
-        <li v-for="(item, index) in paylistLists" :key="index">
+        <li
+          v-for="(item, index) in paylistLists"
+          :key="index"
+          @click="togd(item.id)"
+        >
           <img :src="item.coverImgUrl" alt="" width="170px" height="170px" />
           <p>{{ item.name }}</p>
           <span>{{ getCount(item.playCount) }}</span>
@@ -31,6 +35,9 @@ export default {
     },
     getCount(num) {
       return num / 10000 > 0 ? parseInt(num / 10000) + "万" : num;
+    },
+    togd(id) {
+      this.$router.push({ name: "gdpage", query: { id: id } });
     },
   },
   mounted() {

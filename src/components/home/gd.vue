@@ -39,7 +39,11 @@
     </div>
     <div class="content-list">
       <ul>
-        <li v-for="item in list" :key="item.id + Math.random()">
+        <li
+          v-for="item in list"
+          :key="item.id + Math.random()"
+          @click="togd(item.id)"
+        >
           <img :src="item.coverImgUrl" alt="" width="170px" height="170px" />
           <p>{{ item.name }}</p>
         </li>
@@ -99,6 +103,9 @@ export default {
       }).then((res) => {
         this.list = res.data.playlists;
       });
+    },
+    togd(id) {
+      this.$router.push({ name: "gdpage", query: { id: id } });
     },
   },
 };

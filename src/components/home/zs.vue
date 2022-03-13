@@ -5,7 +5,7 @@
     </div>
     <div class="content">
       <ul>
-        <li v-for="(item, id) in collectList" :key="id">
+        <li v-for="(item, id) in collectList" :key="id" @click="togd(item.id)">
           <img :src="item.picUrl" alt="" style="width: 170px; height: 170px" />
           <p>{{ item.name }}</p>
         </li>
@@ -22,6 +22,11 @@ export default {
     };
   },
   components: {},
+  methods: {
+    togd(id) {
+      this.$router.push({ name: "gdpage", query: { id: id } });
+    },
+  },
   mounted() {
     this.$request({
       url: "/personalized?limit=20",

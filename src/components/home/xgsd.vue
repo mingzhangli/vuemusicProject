@@ -11,7 +11,7 @@
     </div>
     <div class="content">
       <ul>
-        <li v-for="item in songList" :key="item.id">
+        <li v-for="item in songList" :key="item.id" @click="sendId(item.id)">
           <img :src="item.album.picUrl" alt="" width="80px" height="80px" />
           <div class="song-name">
             <p>{{ item.name }}</p>
@@ -37,6 +37,11 @@ export default {
   },
   components: {},
   methods: {
+    sendId(id) {
+      this.$store.state.mid = id;
+      this.$EventBus.$emit("play");
+    },
+
     getTime(dateTime) {
       let min = Math.floor(dateTime / 60000);
       let sec = Math.floor((dateTime - min * 60000) / 1000);

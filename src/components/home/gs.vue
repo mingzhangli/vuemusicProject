@@ -12,7 +12,7 @@
     </div>
     <div class="artist-content">
       <ul>
-        <li v-for="(item, id) in artistList" :key="id">
+        <li v-for="(item, id) in artistList" :key="id" @click="togd(item.id)">
           <img :src="item.img1v1Url" alt="" width="170px" height="170px" />
           <p>{{ item.name }}</p>
         </li>
@@ -41,6 +41,9 @@ export default {
           this.artistList = res.data.list.artists;
         });
       }
+    },
+    togd(id) {
+      this.$router.push({ name: "album", query: { id: id } });
     },
   },
   mounted() {
@@ -75,7 +78,7 @@ export default {
 }
 .artist-content ul li {
   width: 170px;
-  height: 190px;
+  height: 220px;
 }
 .artist-content ul li p {
   text-align: center;
