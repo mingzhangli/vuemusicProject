@@ -139,7 +139,7 @@ export default {
 .right {
   flex: 1;
   padding: 0 20px;
-  height: 700px;
+  height: 1000px;
   overflow: auto;
 }
 </style>

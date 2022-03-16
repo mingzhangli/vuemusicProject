@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <ul>
-        <li v-for="item in videoList" :key="item.vid">
+        <li v-for="item in videoList" :key="item.vid" @click="toLink(item.vid)">
           <img :src="item.coverUrl" />
           <p>{{ item.title }}</p>
         </li>
@@ -19,6 +19,11 @@ export default {
     };
   },
   components: {},
+  methods: {
+    toLink(id) {
+      this.$router.push({ name: "playVideo", query: { vid: id } });
+    },
+  },
   mounted() {
     this.$request({
       url: "/search",

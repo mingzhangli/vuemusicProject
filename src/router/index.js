@@ -23,6 +23,7 @@ import album from '../components/artistInfo/album.vue'
 import mv from '../components/artistInfo/mv.vue'
 import Infos from '../components/artistInfo/Infos.vue'
 import similar from '../components/artistInfo/similar.vue'
+import playVideo from '../views/playVideo'
 
 
 
@@ -74,6 +75,9 @@ const routes = [
           { path: 'Infos', name: 'Infos', component: Infos },
           { path: 'similar', name: 'similar', component: similar },
         ]
+      },
+      {
+        path: 'playVideo', name: 'playVideo', component: playVideo
       }
     ]
   },
