@@ -1,3 +1,11 @@
+<style>
+.aaaa {
+    color: blue
+}
+
+</style>
+
+
 <h1>高仿pc端网易云音乐Vue前端项目</h1>
 
 <h3>技术栈</h3>
@@ -10,7 +18,7 @@
 <h4>项目安装和使用</h4>
 
 <p>1.安装依赖</p>
-<span style="font-size: 50px;color: blue"> yarn install</span>
+<span class="aaaa"> yarn install</span>
 
 <p>2.运行项目</p>
 yarn serve
