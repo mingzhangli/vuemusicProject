@@ -1,3 +1,12 @@
+<h1>高仿pc端网易云音乐Vue前端项目</h1>
+
+
+
+
+
+
+
+
 # music-project
 
 ## Project setup
