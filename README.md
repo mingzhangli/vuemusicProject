@@ -10,7 +10,7 @@
 <h4>项目安装和使用</h4>
 
 <p>1.安装依赖</p>
-yarn install
+<span style="background:red"> yarn install</span>
 
 <p>2.运行项目</p>
 yarn serve
