@@ -5,35 +5,18 @@
 
 
 <h3>项目地址</h3>
-<span>Github地址：</span> <a href="https://github.com/mingzhangli/vuemusicProject.git"></a>
+<span>Github地址：</span> https://github.com/mingzhangli/vuemusicProject.git"
 
+<h4>项目安装和使用</h4>
 
-
-
-
-
-
-# music-project
-
-## Project setup
-```
+<p>1.安装依赖</p>
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
+<p>2.运行项目</p>
 yarn serve
-```
 
-### Compiles and minifies for production
-```
-yarn build
-```
 
-### Lints and fixes files
-```
-yarn lint
-```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
