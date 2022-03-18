@@ -26,12 +26,13 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git"
 
 
 3.效果展示
-
-<img src="./readmeImg/login.png" >
-<img src="./readmeImg/loginList.png" >
-<img src="./readmeImg/mv.png" >
-<img src="./readmeImg/playMV.png" >
-<img src="./readmeImg/search.png" >
+![](./readmeImg/firstpage.png)
+![](./readmeImg/login.png)
+![](./readmeImg/loginList.png)
+![](./readmeImg/mv.png)
+![](./readmeImg/playMV.png)
+![](./readmeImg/search.png)
+![](./readmeImg/songlist.png)
 
 
 ## 功能特性
