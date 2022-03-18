@@ -4,16 +4,16 @@
 肝代码不易，请路过的朋友们随手点个Star。本项目仅用于学习。 
 
 
-##高仿pc端网易云音乐Vue前端项目
+## 高仿pc端网易云音乐Vue前端项目
 
-###技术栈
+### 技术栈
 <p>Vue+Vue-Router+Vuex+Axios+element-ui</p>
 
 
-###项目地址
+### 项目地址
 Github地址： https://github.com/mingzhangli/vuemusicProject.git"
 
-####项目安装和使用
+#### 项目安装和使用
 
 1.安装依赖  
 
