@@ -81,6 +81,5 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git"
 42. 推荐节目
 43. 独家放送
 44. mv 排行
-45. 获取 mv 数据
-46. 播放 mv/视频
+45. 播放 mv/视频
 
