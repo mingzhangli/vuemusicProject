@@ -34,7 +34,7 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
 <br/>
 
 ![](./readmeImg/firstpage.png) 
-<br/><br/>
+<br/>
 
 ##### 登陆界面，扫描二维码，获取个人歌单
 ![](./readmeImg/login.png)
@@ -121,7 +121,7 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
     2.点击播放MV时候，不会停止音乐的播放
     3.首页的侧边栏并没有写对应的子路由页面
 
-目前只发现这些问题，后期我会修改的，然后打发github上面
+目前只发现这些问题，后期我会修改的，然后发github上面
 
 
 ### 7.致谢
