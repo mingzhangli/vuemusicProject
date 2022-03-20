@@ -40,8 +40,8 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
 ![](./readmeImg/loginList.png) 
 
 <br/>
-#####  MV界面、点击播放
 
+#####  MV界面、点击播放
 
 ![](./readmeImg/mv.png)
 ![](./readmeImg/playMV.png) 
