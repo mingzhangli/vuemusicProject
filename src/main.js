@@ -9,7 +9,7 @@ import './assets/css/base.css'
 import axios from 'axios'
 
 Vue.prototype.$request = request
-Vue.prototype.$EventBus = new Vue()
+
 
 axios.defaults.withCredentials = true;
 
