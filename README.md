@@ -35,15 +35,14 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
 
 ![](./readmeImg/firstpage.png) 
 <br/><br/>
-##### 登陆界面，扫描二维码，获取个人歌单
 
+##### 登陆界面，扫描二维码，获取个人歌单
 ![](./readmeImg/login.png)
 ![](./readmeImg/loginList.png) 
 
 <br/>
 
 #####  MV界面、点击播放
-
 ![](./readmeImg/mv.png)
 ![](./readmeImg/playMV.png) 
 
