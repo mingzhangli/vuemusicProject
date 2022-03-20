@@ -51,7 +51,7 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
 ![](./readmeImg/songlist.png)
 
 
-## 功能特性
+### 4.功能特性
 
 1. 登录
 2. 刷新登录
@@ -100,9 +100,10 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
 45. 播放mv
 <br/>
 
-### 4.项目结构
+### 5.项目结构
 <hr>
-#####  1.首页
+
+##### 1.首页
         -侧边栏
         -顶部搜索框
         -底部音乐播放
@@ -115,7 +116,7 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
         -搜索框对应歌单、MV、歌手信息展示
 </br>
 
-### 4.项目出现的问题  
+### 6.项目出现的问题  
     1.项目没有做自适应布局
     2.点击播放MV时候，不会停止音乐的播放
     3.首页的侧边栏并没有写对应的子路由页面
@@ -123,6 +124,6 @@ Github地址： https://github.com/mingzhangli/vuemusicProject.git
 目前只发现这些问题，后期我会修改的，然后打发github上面
 
 
-### 5.致谢
+### 7.致谢
 
-非常感谢后台提供者<a color=#A52A2A size=4 >[Markdwon](https://github.com/Binaryify/NeteaseCloudMusicApi.git)</a>的接口文档，写的非常的详细！
+非常感谢后台提供者<a color=#A52A2A size=4 >[Markdwon](https://github.com/Binaryify/NeteaseCloudMusicApi.git)</a>的接口文档，写的非常的详细
