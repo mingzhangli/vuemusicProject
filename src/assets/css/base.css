@@ -8,3 +8,6 @@
 li{
     cursor: pointer;
 }
+img {
+    border-radius: 15px;
+}
